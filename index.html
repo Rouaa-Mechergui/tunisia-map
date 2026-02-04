@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carte interactive de la Tunisie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div>
+      <h1>Carte interactive de la Tunisie</h1>
+      <p class="subtitle">Clique sur un gouvernorat pour voir ses informations.</p>
+    </div>
+
+    <div class="search">
+      <input id="searchInput" type="text" placeholder="Rechercher un gouvernorat (ex: Sfax)..." />
+      <button id="resetBtn" type="button">Réinitialiser</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="mapCard">
+      <div class="mapHeader">
+        <div class="hint"> Clique pour afficher les détails</div>
+
+        <button id="backBtn" class="back" hidden>← Retour à la Tunisie</button>
+
+        <div id="tooltip" class="tooltip" hidden></div>
+      </div>
+
+      <div id="mapContainer" class="map"></div>
+    </section>
+
+    <aside class="panel">
+      <h2 id="govName">Sélectionne un gouvernorat</h2>
+      <div id="govTagline" class="muted">—</div>
+
+      <div id="photoGrid" class="photo-grid"></div>
+
+      <p id="govDesc" class="desc">
+        Clique sur un gouvernorat pour afficher sa description, ses photos et ses chiffres clés.
+      </p>
+      <div class="section" id="statsSection">
+        <h3>Chiffres clés</h3>
+        <div id="govStats" class="stats"></div>
+      </div>
+    </aside>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
